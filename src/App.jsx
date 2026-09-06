@@ -413,7 +413,7 @@ export default function App() {
                 ["💰","₦10,000 Credited Per Third Party Activation","For every person who activates a Health Link through your direct link invite — your emergency health account is credited with ₦10,000 from distributed contributions."],
                 ["🔄","₦10,000 Credited Per Fourth Party Activation","For every person who activates a Health Link through your indirect link invite (invites from your direct invites) — your emergency health account is credited with ₦10,000 from distributed contributions."],
                 ["🔁","₦10,000 Credited Per Fifth Party Activation","For every person who activates a Health Link through your extended link invites (invites from your indirect invites) — your emergency health account is again credited with ₦10,000 from distributed contributions."],
-                ["🏦","Cash Out or Reserve","Withdraw up to 50% of monthly credits anytime. The other 50% grows as your health emergency reserve for life."],
+                ["🏦","Cash Out Regularly While Building Your Reserve","Withdraw up to 50% of monthly credits anytime. The other 50% grows as your health emergency reserve for Emergency Health Care Situations Only."],
               ].map(([icon,title,desc])=>(
                 <div key={title} className="how-card">
                   <div className="how-icon">{icon}</div>
