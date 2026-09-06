@@ -463,7 +463,7 @@ export default function App() {
           <div className="cta-section">
             <h2 style={{fontSize:"clamp(22px,3vw,36px)",fontWeight:900,marginBottom:12}}>Ready to Build Your Health Network?</h2>
             <p style={{fontSize:15,opacity:.85,maxWidth:560,margin:"0 auto 28px",lineHeight:1.7}}>
-              Register free today. Activate your membership status to unlock your Link ID with ₦50,000 contribution per year and start building a health funding network that works for you — and for life.
+              Register free today. Activate your membership status to unlock your Link ID with ₦50,000 contribution per year and start building a pre-emergency health funding network that works for you — and for life.
             </p>
             <button className="btn btn-gold btn-lg" onClick={()=>setView("register")}>Register Free Now</button>
           </div>
