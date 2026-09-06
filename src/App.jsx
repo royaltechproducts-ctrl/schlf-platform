@@ -404,7 +404,7 @@ export default function App() {
 
           <div className="section">
             <h2 className="section-title">How SCHLF Works</h2>
-            <p className="section-sub">A simple, transparent pre-emergency health funding network built on the power of collective contributions multiplied and distributed back to contributors as made possible through extended benefits of endless integration and expansion on new networks.</p>
+            <p className="section-sub">A simple, transparent pre-emergency health funding network built on the power of collective contributions - multiplied through extended benefits of endless integration and expansion on new networks, and distributed back to contributors as direct beneficiaries.</p>
             <div className="how-grid">
               {[
                 ["📋","Register Free","Create your SCHLF account at no cost. Simple, quick registration with no hidden charges."],
