@@ -404,14 +404,15 @@ export default function App() {
 
           <div className="section">
             <h2 className="section-title">How SCHLF Works</h2>
-            <p className="section-sub">A simple, transparent health funding network built on the power of collective outreach.</p>
+            <p className="section-sub">A simple, transparent health funding network built on the power of collective contribution Network.</p>
             <div className="how-grid">
               {[
                 ["📋","Register Free","Create your SCHLF account at no cost. Simple, quick registration with no hidden charges."],
-                ["🔑","Activate Your Health Link","Pay ₦50,000 annual premium to unlock your unique Health Link ID — valid for 12 months."],
-                ["🔗","Share Your Link","Forward your Health Link ID to contacts, friends, and family anywhere in the world."],
-                ["💰","Earn ₦10,000 Per Activation","Every person who activates a Health Link through your link earns you ₦10,000 credited to your health account."],
-                ["🌊","3 Generations Deep","Earn from your direct, indirect, and extended outreach — ₦10,000 per activation at every level."],
+                ["🔑","Activate Your Health Link","Contribute ₦50,000 to unlock your unique Health Link ID — valid for 12 months."],
+                ["🔗","Share Your Link","Forward your Health Link ID to contacts, friends, and family anywhere in Nigeria."],
+                ["💰","₦10,000 Credited Per Third Party Activation","For every person who activates a Health Link through your direct link invite — your emergency health account is credited with ₦10,000 from distributed contributions."],
+                ["🔄","₦10,000 Credited Per Fourth Party Activation","For every person who activates a Health Link through your indirect link invite (invites from your direct invites) — your emergency health account is credited with ₦10,000 from distributed contributions."],
+                ["🔁","₦10,000 Credited Per Fifth Party Activation","For every person who activates a Health Link through your extended link invites (invites from your indirect invites) — your emergency health account is again credited with ₦10,000 from distributed contributions."],
                 ["🏦","Cash Out or Reserve","Withdraw up to 50% of monthly credits anytime. The other 50% grows as your health emergency reserve for life."],
               ].map(([icon,title,desc])=>(
                 <div key={title} className="how-card">
