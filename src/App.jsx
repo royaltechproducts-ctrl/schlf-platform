@@ -397,14 +397,14 @@ export default function App() {
           </div>
 
           <div className="stats-bar">
-            {[["₦50,000","Annual Premium"],["₦10,000","Credit per Direct Link"],["₦10,000","Credit per Indirect Link"],["₦10,000","Credit per Extended Link"],["50%","Monthly Cashout"],["50%","Health Emergency Reserve"]].map(([v,l])=>(
+            {[["₦50,000","Annual Contribution"],["₦10,000","Credit per Direct Link Invite"],["₦10,000","Credit per Indirect Link Invite"],["₦10,000","Credit per Extended Link Invite"],["50%","Monthly Cash-out"],["50%","Health Emergency Reserve"]].map(([v,l])=>(
               <div key={l} className="stat-item"><div className="stat-val">{v}</div><div className="stat-lbl">{l}</div></div>
             ))}
           </div>
 
           <div className="section">
             <h2 className="section-title">How SCHLF Works</h2>
-            <p className="section-sub">A simple, transparent health funding network built on the power of collective contribution Network.</p>
+            <p className="section-sub">A simple, transparent pre-emergency health funding network built on the power of collective contributions multiplied and distributed back to contributors as made possible through extended benefits of endless integration and expansion on new networks.</p>
             <div className="how-grid">
               {[
                 ["📋","Register Free","Create your SCHLF account at no cost. Simple, quick registration with no hidden charges."],
@@ -427,9 +427,9 @@ export default function App() {
           <div style={{background:WHITE,padding:"48px 24px"}}>
             <div style={{maxWidth:800,margin:"0 auto"}}>
               <h2 className="section-title">Your Credit Structure</h2>
-              <p className="section-sub">Every activated link in your network earns you ₦10,000 — up to 3 levels deep. No cap.</p>
+              <p className="section-sub">Every activated link on the platform results to ₦10,000 credited to your pre-emergency health account — for all direct invites, indirect invites and numerous extended invites that can be associated to your network. No cap.</p>
               <div className="credit-row">
-                {[["Direct Outreach","₦10,000","People who activate directly through your link"],["Indirect Outreach","₦10,000","People who activate through your direct contacts' links"],["Extended Outreach","₦10,000","People who activate through your indirect contacts' links"]].map(([level,amt,desc])=>(
+                {[["Direct Invites","₦10,000","People who activate directly through your link"],["Indirect Invites","₦10,000","People who activate through your direct contacts' links"],["Extended Invites","₦10,000","People who activate through your indirect contacts' links"]].map(([level,amt,desc])=>(
                   <div key={level} className="credit-cell">
                     <div className="credit-level">{level}</div>
                     <div className="credit-amt">{amt}</div>
@@ -463,7 +463,7 @@ export default function App() {
           <div className="cta-section">
             <h2 style={{fontSize:"clamp(22px,3vw,36px)",fontWeight:900,marginBottom:12}}>Ready to Build Your Health Network?</h2>
             <p style={{fontSize:15,opacity:.85,maxWidth:560,margin:"0 auto 28px",lineHeight:1.7}}>
-              Register free today. Activate your Health Link ID for just ₦50,000 per year and start building a health funding network that works for you — and for life.
+              Register free today. Activate your membership status to unlock your Link ID with ₦50,000 contribution per year and start building a health funding network that works for you — and for life.
             </p>
             <button className="btn btn-gold btn-lg" onClick={()=>setView("register")}>Register Free Now</button>
           </div>
