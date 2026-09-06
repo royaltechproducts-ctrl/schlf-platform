@@ -718,7 +718,7 @@ export default function App() {
               <button className="btn btn-outline btn-sm" onClick={()=>{setAdminAuth(false);setAdminPwd("");setView("landing");}}>🔒 Lock & Exit</button>
             </div>
             <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(130px,1fr))",gap:12,marginTop:20}}>
-              {[["Total Members",allArr.length],["Active",activeArr.length],["Pending",pendingArr.length],["Founding",allArr.filter(m=>m.memberType==="founding").length],["Total Credits",fmtNGN(allArr.reduce((s,m)=>s+m.totalCredited,0))]].map(([l,v])=>(
+              {[["Total Members",allArr.length],["Active",activeArr.length],["Pending",pendingArr.length],["Founding",allArr.filter(m=>m.memberType==="founding").length],["Invited Members",allArr.filter(m=>m.refCode).length],["Total Credits",fmtNGN(allArr.reduce((s,m)=>s+m.totalCredited,0))]].map(([l,v])=>(
                 <div key={l} style={{background:"rgba(255,255,255,0.12)",borderRadius:10,padding:12}}>
                   <div style={{fontSize:20,fontWeight:900}}>{v}</div>
                   <div style={{fontSize:11,opacity:.7,textTransform:"uppercase",letterSpacing:.5}}>{l}</div>
