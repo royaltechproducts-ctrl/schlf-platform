@@ -388,7 +388,7 @@ export default function App() {
           <div className="hero">
             <div className="hero-badge">🏥 {COMPANY}</div>
             <h1 className="hero-title">Your Emergency Response Network<br/><span>Is Your Critical Net Worth</span></h1>
-            <p className="hero-sub">Registration is FREE. Contribute ₦50,000/year to Activate your Health Link ID on the Platform and unlock your Health Link to invite all your contacts. Share your link and start receiving ₦10,000 credits from third party activation stemming from your direct, Indirect and Extended link invite circulations — and build a lifetime health emergency reserve.</p>
+            <p className="hero-sub">Registration is FREE. Contribute ₦50,000/year to Activate your membership status on the Platform and unlock your Health Link ID to invite all your contacts. Share your link and start receiving ₦10,000 credits from third party activation stemming from your direct, Indirect and Extended link invite circulations — and build a lifetime health emergency reserve.</p>
             <p className="hero-mantra">🌿 "{MANTRA}"</p>
             <div className="hero-btns">
               <button className="btn btn-gold btn-lg" onClick={()=>setView("register")}>Register Free Today</button>
