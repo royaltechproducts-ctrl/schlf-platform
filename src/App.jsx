@@ -551,10 +551,25 @@ export default function App() {
           </div>
 
           <div className="portal-tabs">
-            {[["overview","Overview"],["link","My Health Link"],["credits","Credit History"],["cashout","Cash Out"],["renew","Renew"]].map(([id,label])=>(
+            {[["home","🏠 Home"],["overview","Overview"],["link","My Health Link"],["credits","Credit History"],["cashout","Cash Out"],["renew","Renew"]].filter(([id])=>id!=="renew"||currentMember.memberType!=="founding").map(([id,label])=>(
               <button key={id} className={`portal-tab${portalTab===id?" active":""}`} onClick={()=>setPortalTab(id)}>{label}</button>
             ))}
           </div>
+
+          {portalTab==="home" && (
+            <div style={{textAlign:"center",padding:"20px 0"}}>
+              <div style={{fontSize:48,marginBottom:12}}>🏥</div>
+              <div style={{fontWeight:900,fontSize:20,color:TEAL_DARK,marginBottom:8}}>{COMPANY}</div>
+              <div style={{fontStyle:"italic",color:MUTED,fontSize:14,marginBottom:24}}>"{MANTRA}"</div>
+              <button className="btn btn-teal btn-lg" style={{marginBottom:12}}
+                onClick={()=>{setCurrentMember(null);setView("landing");}}>
+                Go to Home Page
+              </button>
+              <div style={{fontSize:12,color:MUTED,marginTop:16,lineHeight:1.8}}>
+                {ADDRESS}<br/>{EMAIL_ADDR} | {PHONE}
+              </div>
+            </div>
+          )}
 
           {portalTab==="overview" && (
             <div className="card">
@@ -584,7 +599,7 @@ export default function App() {
                 </div>
               ):(
                 <>
-                  <div style={{fontSize:13,color:MUTED,marginBottom:10}}>Share this link with your network. Every activation earns you ₦10,000.</div>
+                  <div style={{fontSize:13,color:MUTED,marginBottom:10}}>Share this link with everyone on your contact list to become a direct beneficiary with ₦10,000 credited to your SCHLF account per third party application/activation.</div>
                   <div className="link-box">https://schlf-platform.vercel.app?ref={currentMember.linkCode}</div>
                   <button className="btn btn-teal btn-sm" onClick={()=>{navigator.clipboard.writeText(`https://schlf-platform.vercel.app?ref=${currentMember.linkCode}`);showNote("Link copied!");}}>Copy Link</button>
                 </>
@@ -598,7 +613,7 @@ export default function App() {
                 <span>Date</span><span>From</span><span>Level</span><span>Amount</span>
               </div>
               {credits.length===0?(
-                <div style={{padding:32,textAlign:"center",color:MUTED}}>No credits yet. Share your link to start earning.</div>
+                <div style={{padding:32,textAlign:"center",color:MUTED}}>No credits yet. Share your link to start getting credited on third party activation.</div>
               ):credits.map((c,i)=>(
                 <div key={i} className="table-row" style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr 1fr",gap:12}}>
                   <div>{new Date(c.created_at).toLocaleDateString("en-NG")}</div>
