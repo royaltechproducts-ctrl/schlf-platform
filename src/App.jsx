@@ -388,7 +388,7 @@ export default function App() {
           <div className="hero">
             <div className="hero-badge">🏥 {COMPANY}</div>
             <h1 className="hero-title">Your Emergency Response Network<br/><span>Is Your Critical Net Worth</span></h1>
-            <p className="hero-sub">Registration is FREE. Contribute ₦50,000/year to Activate your membership status on the Platform and unlock your Health Link ID to invite all your contacts. Share your link and start receiving ₦10,000 credits from third party activation stemming from your direct, Indirect and Extended link invite circulations — and build a lifetime health emergency reserve.</p>
+            <p className="hero-sub">Registration is FREE. Contribute ₦50,000/year to Activate your membership status on the Platform and unlock your Health Link ID to invite all your contacts. Share your link and start receiving ₦10,000 credits from third/forth/fifth party activation stemming from your direct, Indirect and Extended link invite circulations — and build a lifetime health emergency reserve.</p>
             <p className="hero-mantra">🌿 "{MANTRA}"</p>
             <div className="hero-btns">
               <button className="btn btn-gold btn-lg" onClick={()=>setView("register")}>Register Free Today</button>
@@ -410,10 +410,10 @@ export default function App() {
                 ["📋","Register Free","Create your SCHLF account at no cost. Simple, quick registration with no hidden charges."],
                 ["🔑","Activate Your Health Link","Contribute ₦50,000 to unlock your unique Health Link ID — valid for 12 months."],
                 ["🔗","Share Your Link","Forward your Health Link ID to contacts, friends, and family anywhere in Nigeria."],
-                ["💰","₦10,000 Credited Per Third Party Activation","For every person who activates a Health Link through your direct link invite — your emergency health account is credited with ₦10,000 from distributed contributions."],
-                ["🔄","₦10,000 Credited Per Fourth Party Activation","For every person who activates a Health Link through your indirect link invite (invites from your direct invites) — your emergency health account is credited with ₦10,000 from distributed contributions."],
-                ["🔁","₦10,000 Credited Per Fifth Party Activation","For every person who activates a Health Link through your extended link invites (invites from your indirect invites) — your emergency health account is again credited with ₦10,000 from distributed contributions."],
-                ["🏦","Cash Out Regularly While Building Your Reserve","Withdraw up to 50% of monthly credits anytime. The other 50% grows as your health emergency reserve for Emergency Health Care Situations Only."],
+                ["💰","₦10,000 Credited Per Third Party Activation","For every person who activates a Health Link through your direct link invite — your SCHLF Account is credited with ₦10,000 from distributed contributions."],
+                ["🔄","₦10,000 Credited Per Fourth Party Activation","For every person who activates a Health Link through your indirect link invite (invites from your direct invites) — your SCHLF Account is credited with ₦10,000 from distributed contributions."],
+                ["🔁","₦10,000 Credited Per Fifth Party Activation","For every person who activates a Health Link through your extended link invites (invites from your indirect invites) — your SCHLF Account is again credited with ₦10,000 from distributed contributions."],
+                ["🏦","Cash Out Regularly While Building Your Reserve","Withdraw up to 50% of monthly credits from your SCHLF Account anytime. The other 50% grows as your health emergency reserve for Emergency Health Care Situations Only."],
               ].map(([icon,title,desc])=>(
                 <div key={title} className="how-card">
                   <div className="how-icon">{icon}</div>
@@ -427,7 +427,7 @@ export default function App() {
           <div style={{background:WHITE,padding:"48px 24px"}}>
             <div style={{maxWidth:800,margin:"0 auto"}}>
               <h2 className="section-title">Your Credit Structure</h2>
-              <p className="section-sub">Every activated link on the platform results to ₦10,000 credited to your pre-emergency health account — for all direct invites, indirect invites and numerous extended invites that can be associated to your network. No cap.</p>
+              <p className="section-sub">Every activated link on the platform results to ₦10,000 credited to your SCHLF Account — for all direct invites, indirect invites and numerous extended invites that can be associated to your network. No cap.</p>
               <div className="credit-row">
                 {[["Direct Invites","₦10,000","People who activate directly through your link"],["Indirect Invites","₦10,000","People who activate through your direct contacts' links"],["Extended Invites","₦10,000","People who activate through your indirect contacts' links"]].map(([level,amt,desc])=>(
                   <div key={level} className="credit-cell">
