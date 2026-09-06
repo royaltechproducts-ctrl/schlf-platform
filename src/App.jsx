@@ -31,6 +31,13 @@ const SUCCESS    = "#166534";
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 const fmtNGN = (v) => "₦" + Number(v||0).toLocaleString("en-NG");
+
+const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
+const validatePhone = (phone) => /^(\+?234|0)[789][01]\d{8}$/.test(phone.replace(/\s/g,""));
+const validateAge = (dob) => {
+  const age = Math.floor((Date.now() - new Date(dob)) / 31557600000);
+  return age >= 18;
+};
 const genCode = (name) => {
   const ini = name.trim().split(" ").map(w=>w[0]?.toUpperCase()||"X").join("").slice(0,3);
   const rand = Math.random().toString(36).substring(2,6).toUpperCase();
@@ -116,10 +123,30 @@ export default function App() {
   const handleRegister = async () => {
     const errs={};
     ["fullName","email","phone","institution","state","dob"].forEach(k=>{ if(!regForm[k].trim()) errs[k]="Required"; });
+
+    // Format validation
+    if(regForm.email && !validateEmail(regForm.email)) errs.email = "Please enter a valid email address.";
+    if(regForm.phone && !validatePhone(regForm.phone)) errs.phone = "Please enter a valid Nigerian phone number (e.g. 08012345678 or +2348012345678).";
+    if(regForm.dob && !validateAge(regForm.dob)) errs.dob = "You must be 18 years or older to register.";
+    if(regForm.fullName && regForm.fullName.trim().split(" ").length < 2) errs.fullName = "Please enter your full name (first and last name).";
+
     if(Object.keys(errs).length){ setRegErrors(errs); return; }
+
+    // Duplicate check — email and phone
+    const {data: existingEmail} = await supabase.from("schlf_members").select("link_code").eq("email", regForm.email.trim().toLowerCase()).limit(1);
+    if(existingEmail && existingEmail.length > 0){
+      setRegErrors({email:"This email address is already registered on SCHLF. Each person may hold only one account."});
+      return;
+    }
+    const {data: existingPhone} = await supabase.from("schlf_members").select("link_code").eq("phone", regForm.phone.trim()).limit(1);
+    if(existingPhone && existingPhone.length > 0){
+      setRegErrors({phone:"This phone number is already registered on SCHLF. Each person may hold only one account."});
+      return;
+    }
+
     const linkCode = genCode(regForm.fullName);
     const {error} = await supabase.from("schlf_members").insert({
-      link_code:linkCode, full_name:regForm.fullName.trim(), email:regForm.email.trim(),
+      link_code:linkCode, full_name:regForm.fullName.trim(), email:regForm.email.trim().toLowerCase(),
       phone:regForm.phone.trim(), institution:regForm.institution.trim(), state:regForm.state.trim(),
       country:regForm.country, dob:regForm.dob, ref_code:urlRef||null,
       status:"pending", member_type:"regular", link_active:false,
@@ -508,6 +535,14 @@ export default function App() {
                 Reference: Your name + SCHLF<br/>
                 Then WhatsApp: <strong>+234 909 999 4816</strong>
               </div>
+            </div>
+            <div style={{background:"#FEE2E2",border:"1px solid #FCA5A5",borderRadius:8,
+              padding:14,marginBottom:16,fontSize:12,color:ERROR,lineHeight:1.7}}>
+              <strong>⚠️ Important Notice:</strong> Each individual may hold only ONE SCHLF account.
+              Duplicate registrations using the same email, phone number, or identity will result in
+              immediate suspension of all associated accounts and permanent forfeiture of all credits.
+              By registering, you confirm that all information provided is true, accurate and verifiable.
+              SCHLF reserves the right to verify your identity at any time.
             </div>
             <button className="btn btn-teal" style={{width:"100%"}} onClick={handleRegister}>Register Free</button>
           </div>
